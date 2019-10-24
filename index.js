@@ -3,7 +3,7 @@
 // This is how it works inside Wok to Walk.
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-class Ingridients {
+class Ingridient {
     constructor(noodles, toppings, sauce){
         this.noodles = noodles
         this.toppings = toppings 
@@ -20,16 +20,17 @@ class Ingridients {
 class Wok {
     constructor() {
         this.clean = true
+        this.ingridient = []
     }
     washing() {
         console.log("wait a minute, the wok is being washed!")
         this.clean = true
     }
-    cooking(Ingridients) {
+    cooking(Ingridient) {
         if(this.clean){
             // luckily the wok is clean, so we can start cooking
             console.log("seesshh.. your food is being cooked!")
-            Ingridients.cooked = true
+            Ingridient.cooked = true
             this.clean = false
         } else {
             // unfortunately the wok is filthy, so we need to wash it first
@@ -39,8 +40,8 @@ class Wok {
 }
 
 
-ing1 = new Ingridients("rice", "mushrooms", "sweet sour")
-ing2 = new Ingridients("wheat", "beef", "spicy")
+ing1 = new Ingridient("rice", "mushrooms", "sweet sour")
+ing2 = new Ingridient("wheat", "beef", "spicy")
 
 wok1 = new Wok()
 
